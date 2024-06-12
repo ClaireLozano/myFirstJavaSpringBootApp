@@ -3,6 +3,7 @@ package com.clozano.firstapp.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 // https://projectlombok.org/features/
 import lombok.Data;
@@ -22,5 +23,6 @@ public class Comment {
     @NonNull
     private String body;
 
-    // link
+    @ManyToOne
+    private Link link;
 }
