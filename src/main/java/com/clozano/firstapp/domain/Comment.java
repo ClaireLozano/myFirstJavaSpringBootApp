@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor          // pour ne pas avoir besoin d'écrire le constructeur vide
 @RequiredArgsConstructor    // pour avoir un constructeur avec en argument requis ceux qui sont flagué @NonNull
 @Data                       // avoir les setter, getter, toString, requiredArgsConstructor, equalsAndHashCode
-public class Comment {
+public class Comment extends Auditable {
     @Id
     @GeneratedValue
     private Long id;

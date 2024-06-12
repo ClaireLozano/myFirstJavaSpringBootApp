@@ -9,10 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.clozano.firstapp.config.MyFirstApplicationProperties;
 
 @SpringBootApplication
+@EnableJpaAuditing
 @EnableConfigurationProperties(MyFirstApplicationProperties.class)
 public class MyFirstApplication {
 
