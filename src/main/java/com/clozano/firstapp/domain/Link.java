@@ -12,7 +12,8 @@ import lombok.NonNull;
 @NoArgsConstructor          
 @Data
 public class Link {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     @NonNull

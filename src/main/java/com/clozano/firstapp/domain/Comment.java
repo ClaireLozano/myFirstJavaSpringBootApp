@@ -17,7 +17,6 @@ import lombok.RequiredArgsConstructor;
 public class Comment {
     @Id
     @GeneratedValue
-    @NonNull
     private Long id;
 
     @NonNull
