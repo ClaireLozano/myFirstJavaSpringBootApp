@@ -1,4 +1,4 @@
-package com.clozano.test;
+package com.clozano.firstapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
