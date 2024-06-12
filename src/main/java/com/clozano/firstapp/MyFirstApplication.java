@@ -1,5 +1,7 @@
 package com.clozano.firstapp;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +16,16 @@ import com.clozano.firstapp.config.MyFirstApplicationProperties;
 @EnableConfigurationProperties(MyFirstApplicationProperties.class)
 public class MyFirstApplication {
 
+	// static : est partagé entre toutes les instances de MyFirstApplication.
+	// final : ne peut pas être réassigné après son initialisation.
+	private static final Logger log = LoggerFactory.getLogger(MyFirstApplication.class);
+
+	/**
+	 * @Autowired permet à Spring de résoudre et d'injecter automatiquement une instance du bean 
+	 * approprié dans la variable membre properties de votre classe. Cela signifie que Spring va 
+	 * chercher un bean de type MyFirstApplicationProperties dans le contexte de l'application et 
+	 * l'assigner à cette variable.
+	 */
 	@Autowired
 	private MyFirstApplicationProperties properties;
 
@@ -41,6 +53,18 @@ public class MyFirstApplication {
 	CommandLineRunner runnerDev() {
 		return args -> {
 			System.out.println("this is something that we would only do in dev");
+
+			/**
+			 * 2024-06-12T12:46:49.719+02:00  INFO 24016 --- [firstapp] [  restartedMain] c.clozano.firstapp.MyFirstApplication    : info
+			 * 2024-06-12T12:46:49.720+02:00 DEBUG 24016 --- [firstapp] [  restartedMain] c.clozano.firstapp.MyFirstApplication    : debug
+			 * 2024-06-12T12:46:49.720+02:00  WARN 24016 --- [firstapp] [  restartedMain] c.clozano.firstapp.MyFirstApplication    : warn
+			 * 2024-06-12T12:46:49.721+02:00 ERROR 24016 --- [firstapp] [  restartedMain] c.clozano.firstapp.MyFirstApplication    : error
+			 */
+			log.info("info");
+			log.warn("warn");
+			log.debug("debug");
+			log.trace("trace");
+			log.error("error");
 		};
 	}
 
