@@ -1,6 +1,6 @@
 package com.clozano.firstapp;
 
-import java.util.List;
+// import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,8 +15,8 @@ import org.springframework.core.annotation.Order;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.clozano.firstapp.config.MyFirstApplicationProperties;
-import com.clozano.firstapp.domain.Comment;
-import com.clozano.firstapp.domain.Link;
+// import com.clozano.firstapp.domain.Comment;
+// import com.clozano.firstapp.domain.Link;
 import com.clozano.firstapp.repository.CommentRepository;
 import com.clozano.firstapp.repository.LinkRepository;
 

@@ -1,7 +1,5 @@
 package com.clozano.firstapp.repository;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.clozano.firstapp.domain.Link;
