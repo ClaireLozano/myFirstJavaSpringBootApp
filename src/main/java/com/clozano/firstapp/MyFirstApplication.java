@@ -9,9 +9,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.clozano.firstapp.config.MyFirstApplicationProperties;
+import com.clozano.firstapp.domain.Comment;
+import com.clozano.firstapp.domain.Link;
+import com.clozano.firstapp.repository.CommentRepository;
+import com.clozano.firstapp.repository.LinkRepository;
 
 @SpringBootApplication
 @EnableJpaAuditing
@@ -67,6 +72,20 @@ public class MyFirstApplication {
 			log.debug("debug");
 			log.trace("trace");
 			log.error("error");
+		};
+	}
+
+	@Bean
+	@Order(2)
+	CommandLineRunner runnerRepository(LinkRepository linkRepository, CommentRepository commentRepository) {
+		return args -> {
+			System.out.println("Bean order 2");
+			// Link link = new Link("title", "url.com");
+			// linkRepository.save(link); // pour le save dans la BDD
+
+			// Comment comment = new Comment("je suis un commentaire", link);
+			// commentRepository.save(comment);
+			// link.addComment(comment);
 		};
 	}
 

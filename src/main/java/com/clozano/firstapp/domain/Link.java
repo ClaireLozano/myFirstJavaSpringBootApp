@@ -27,4 +27,15 @@ public class Link extends Auditable {
 
     @OneToMany(mappedBy = "link") // Un link pour plusieurs commentaires
     private List<Comment> comments = new ArrayList<>();
+
+    // todo: temporaire, dans le tuto il ne comprend pas pk il n'a pas de constructeur avec title et url
+    public Link(@NonNull String title, @NonNull String url) {
+        this.title = title;
+        this.url = url;
+    }
+
+    // todo: idem, il comprend pas pk il a a le faire à la main
+    public void addComment(Comment comment) {
+        comments.add(comment);
+    }
 }
