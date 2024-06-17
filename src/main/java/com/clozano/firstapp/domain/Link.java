@@ -7,13 +7,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor          
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class Link extends Auditable {
     @Id
     @GeneratedValue
@@ -28,13 +34,7 @@ public class Link extends Auditable {
     @OneToMany(mappedBy = "link") // Un link pour plusieurs commentaires
     private List<Comment> comments = new ArrayList<>();
 
-    // todo: temporaire, dans le tuto il ne comprend pas pk il n'a pas de constructeur avec title et url
-    public Link(@NonNull String title, @NonNull String url) {
-        this.title = title;
-        this.url = url;
-    }
-
-    // todo: idem, il comprend pas pk il a a le faire à la main
+    // todo: temporaire, il comprend pas pk il a a le faire à la main
     public void addComment(Comment comment) {
         comments.add(comment);
     }

@@ -6,15 +6,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 // https://projectlombok.org/features/
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor          // pour ne pas avoir besoin d'écrire le constructeur vide
 @RequiredArgsConstructor    // pour avoir un constructeur avec en argument requis ceux qui sont flagué @NonNull
-@Data                       // avoir les setter, getter, toString, requiredArgsConstructor, equalsAndHashCode
+//@Data                       // avoir les setter, getter, toString, requiredArgsConstructor, equalsAndHashCode
+@Getter
+@Setter
+@ToString
 public class Comment extends Auditable {
     @Id
     @GeneratedValue
